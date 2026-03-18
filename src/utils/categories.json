@@ -1,0 +1,56 @@
+{
+  "easy": [
+    {
+      "id": "animals",
+      "name": "Animals",
+      "totalIcons": 32,
+      "iconDirectory": "icons/easy/animals"
+    },
+    {
+      "id": "sports",
+      "name": "Sports",
+      "totalIcons": 32,
+      "iconDirectory": "icons/easy/sports"
+    },
+    {
+      "id": "fruits",
+      "name": "Fruits",
+      "totalIcons": 32,
+      "iconDirectory": "icons/easy/fruits"
+    }
+  ],
+  "medium": [
+    {
+      "id": "flags",
+      "name": "Flags",
+      "totalIcons": 32,
+      "iconDirectory": "icons/medium/flags"
+    },
+    {
+      "id": "vehicles",
+      "name": "Vehicles",
+      "totalIcons": 32,
+      "iconDirectory": "icons/medium/vehicles"
+    },
+    {
+      "id": "emojis",
+      "name": "Emojis",
+      "totalIcons": 32,
+      "iconDirectory": "icons/medium/emojis"
+    }
+  ],
+  "hard": [
+    {
+      "id": "art",
+      "name": "Art Symbols",
+      "totalIcons": 32,
+      "iconDirectory": "icons/hard/art"
+    },
+    {
+      "id": "patterns",
+      "name": "Patterns",
+      "totalIcons": 32,
+      "iconDirectory": "icons/hard/patterns"
+    }
+  ]
+}

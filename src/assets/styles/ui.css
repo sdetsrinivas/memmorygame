@@ -1,0 +1,269 @@
+/* MAIN PREGAME SETUP CONTAINER */
+.pregame-setup {
+  text-align: center;
+  padding: 2rem 1rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #f3e7e9 0%, #d7c8e8 50%, #c5e0d9 100%);
+}
+
+.pregame-setup h2 {
+  margin-bottom: 2.5rem;
+  color: #0d9488;
+  font-size: 3.2rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+  word-spacing: 0.5rem;
+}
+
+/* CENTERED SETUP CONTAINER */
+.setup-container {
+  max-width: 480px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* SETUP SECTIONS */
+.setup-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.setup-card {
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-align: left;
+  background-color: #fff;
+}
+
+.setup-card h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: #0d9488;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.setup-card-desc {
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+/* BOARD SELECTOR - PILL BUTTONS GRID */
+.board-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.board-options button {
+  padding: 12px 8px;
+  height: 48px;
+  border: 2px solid #e5e7eb;
+  border-radius: 24px;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #4b5563;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.board-options button:hover {
+  border-color: #0d9488;
+  background: #f0fdf4;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.board-options button.selected {
+  background: #0d9488;
+  color: #fff;
+  border-color: #0d9488;
+  box-shadow: 0 6px 16px rgba(13, 148, 136, 0.3);
+  font-weight: 700;
+}
+
+/* DIFFICULTY DROPDOWN */
+.difficulty-dropdown {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #fff;
+  font-weight: 600;
+}
+
+.difficulty-dropdown:focus {
+  outline: none;
+  border-color: #0d9488;
+  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.1);
+}
+
+.difficulty-dropdown.difficulty-easy {
+  background-color: #dcfce7;
+  color: #15803d;
+  border-color: #16a34a;
+}
+
+.difficulty-dropdown.difficulty-medium {
+  background-color: #fef9c3;
+  color: #ca8a04;
+  border-color: #d97706;
+}
+
+.difficulty-dropdown.difficulty-hard {
+  background-color: #fee2e2;
+  color: #991b1b;
+  border-color: #dc2626;
+}
+
+/* CATEGORY DROPDOWN */
+.category-dropdown {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: #fff;
+  color: #333;
+  font-weight: 500;
+}
+
+.category-dropdown:focus {
+  outline: none;
+  border-color: #0d9488;
+  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.1);
+}
+
+/* COLOR PICKER - DROPDOWN */
+.color-dropdown {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 600;
+}
+
+.color-dropdown:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.1);
+}
+
+/* PLAYER NAMES */
+.player-name-inputs > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.player-name-inputs input {
+  padding: 10px;
+  border: 2px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #fff;
+  font-family: "Poppins", sans-serif;
+  transition: all 0.2s ease;
+  color: #333;
+}
+
+.player-name-inputs input::placeholder {
+  color: #999;
+}
+
+.player-name-inputs input:focus {
+  outline: none;
+  border-color: #0d9488;
+  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.1);
+}
+
+/* START BUTTON */
+.start-btn {
+  width: 100%;
+  padding: 16px 24px;
+  margin-top: 2rem;
+  background: #0d9488;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  letter-spacing: 0.3px;
+  font-family: "Poppins", sans-serif;
+}
+
+.start-btn:hover {
+  background: #0f766e;
+  box-shadow: 0 6px 16px rgba(13, 148, 136, 0.3);
+}
+
+.start-btn:active {
+  transform: scale(0.98);
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 600px) {
+  .pregame-setup {
+    padding: 1.5rem 1rem;
+    min-height: auto;
+  }
+
+  .pregame-setup h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .player-name-inputs > div {
+    grid-template-columns: 1fr;
+  }
+
+  .board-options {
+    gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .board-options button {
+    padding: 10px 6px;
+    height: 44px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .board-options {
+    grid-template-columns: 1fr;
+  }
+
+  .board-options button {
+    height: 42px;
+  }
+}

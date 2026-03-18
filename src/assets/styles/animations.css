@@ -1,0 +1,49 @@
+.card {
+  perspective: 1000px;
+  cursor: pointer;
+  position: relative;
+}
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform var(--transition-duration) cubic-bezier(0.4, 2, 0.3, 1);
+  transform-style: preserve-3d;
+}
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  top: 0;
+  left: 0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card-front {
+  z-index: 2;
+}
+.card-back {
+  transform: rotateY(180deg);
+  z-index: 3;
+}
+.card.matched {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.card-shape {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.card-icon {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+  z-index: 2;
+}

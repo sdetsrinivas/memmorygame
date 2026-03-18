@@ -1,0 +1,14 @@
+:root {
+  --card-back-color: #4a90e2;
+  --card-back-hover: #357abd;
+  --card-back-active: #2e5c8a;
+  --transition-duration: 0.3s;
+  --swatch-blue: #4a90e2;
+  --swatch-red: #e24a4a;
+  --swatch-green: #4ae24a;
+  --swatch-purple: #9d4ae2;
+  --swatch-orange: #e2904a;
+  --swatch-pink: #e24ab8;
+  --swatch-teal: #4ae2d8;
+  --swatch-gray: #6b7280;
+}

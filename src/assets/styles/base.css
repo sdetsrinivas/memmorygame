@@ -1,0 +1,205 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import "./ui.css";
+@import "./board.css";
+@import "./animations.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #ffffff;
+  color: #333;
+  min-height: 100vh;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#root {
+  width: 100%;
+}
+
+.game-container {
+  width: 100vw;
+  min-height: 100vh;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 4rem;
+  box-sizing: border-box;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.player-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: #f7f7fa;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 800px;
+}
+
+.player-info > div {
+  text-align: center;
+  padding: 0.75rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.player-info > div.active {
+  background: #4a90e2;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+  transform: scale(1.05);
+}
+
+.turn-indicator {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+.game-board {
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.endgame-modal {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  padding: 3rem 2rem;
+  text-align: center;
+  color: #333;
+  animation: slideIn 0.3s ease-out;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.endgame-modal h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  color: #0d9488;
+  font-weight: 700;
+}
+
+.endgame-modal > div {
+  margin: 0.75rem 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #555;
+}
+
+.endgame-modal .winner {
+  font-size: 1.3rem;
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: #f0fdf4;
+  border-radius: 12px;
+  color: #0d9488;
+  font-weight: 600;
+}
+
+.endgame-modal button {
+  margin: 0.75rem 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  border: none;
+  background: #0d9488;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(13, 148, 136, 0.15);
+}
+
+.endgame-modal button:hover {
+  background: #0f766e;
+  box-shadow: 0 4px 12px rgba(13, 148, 136, 0.25);
+}
+
+.endgame-modal button:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 768px) {
+  .game-container {
+    padding: 1.5rem 1rem;
+    margin: 1rem;
+  }
+
+  .player-info {
+    margin-bottom: 1.5rem;
+    padding: 0.75rem;
+  }
+
+  .endgame-modal {
+    padding: 2rem 1.5rem;
+  }
+
+  .endgame-modal h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 0;
+  }
+
+  .game-container {
+    width: 100%;
+    border-radius: 0;
+    margin: 0;
+    padding: 1rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .player-info {
+    margin-bottom: 1rem;
+  }
+
+  .endgame-modal {
+    padding: 1.5rem;
+  }
+}
