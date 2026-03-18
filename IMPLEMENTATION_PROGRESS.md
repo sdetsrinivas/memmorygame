@@ -312,6 +312,7 @@ interface CardProps {
    - Removed pentagon/octagon SVG rendering from Card.tsx
    - Cleaned up pentagon/octagon positioning logic from CardGrid.tsx and layoutEngine.ts
    - Updated BoardSelector to display only remaining options
+   - Removed pentagon and octagon shape references from icon generation in generate_icons.py
 
 2. **Triangle Layout Refactoring** ✅
    - **25-card layout**: 1-3-5-7-9 pyramid (25 positions, center is non-flippable tile)
@@ -464,7 +465,7 @@ src/
 
 ---
 
-**Last Checkpoint**: Triangle layout refactoring complete. Removed pentagon/octagon shapes. Implemented 24-card (1-3-5-7-9 pyramid with center non-flippable tile) and 36-card (1-3-5-7-9-11 full pyramid) triangle layouts. All TypeScript types updated. Ready for gameplay testing with new pyramid layouts.
+**Last Checkpoint**: Triangle layout refactoring complete. Removed pentagon/octagon shapes from game logic and icon generation. Implemented 24-card (1-3-5-7-9 pyramid with center non-flippable tile) and 36-card (1-3-5-7-9-11 full pyramid) triangle layouts. All TypeScript types updated. Ready for gameplay testing with new pyramid layouts.
 **Est. Time to Completion**: 1-2 hours (gameplay testing + responsiveness polish)
 
 ---
