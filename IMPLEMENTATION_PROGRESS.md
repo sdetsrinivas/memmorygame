@@ -505,3 +505,44 @@ src/
 - `src/components/Board/CardGrid.tsx` - Added triangle25 handling with center non-flippable card
 - `src/assets/styles/base.css` - Removed constrained box, full window layout
 - `src/assets/styles/board.css` - Updated polygon-layout for proper centering
+
+---
+
+## 🔧 PHASE 7: Triangle Layout Polish & Game Screen Fixes (NEXT UP)
+
+> **Scope**: Active game screen only (`TriangleBoard.tsx`, `GameBoard.tsx`, `PlayerInfo.tsx`, `Board.css`). Do NOT touch `PreGameSetup.tsx` or any setup screen component.
+> **Priority**: Desktop/web first. Mobile responsiveness is out of scope for this phase.
+
+### Issues to Fix
+
+#### 1. Triangle 25 and Triangle 36 — Horizontal Centering Still Off
+- Both pyramid grids are visually drifting off-center on the game screen
+- Root cause: each row's horizontal offset calculation in `getTrianglePositions()` or the row wrapper in `TriangleBoard.tsx` is not accounting for full viewport width
+- Fix: ensure each row is centered relative to `100vw`, not relative to its own content width. Use `display: flex; justify-content: center` on every row wrapper, and confirm no left-side padding or margin is shifting the container
+
+#### 2. Triangle 25 — Shape Does Not Look Like a Triangle
+- The 1-3-5-7-9 pyramid is not rendering with a clear visual pyramid shape
+- Fix: verify the row widths and card offsets in `getTrianglePositions()` produce a proper upward-pointing pyramid. Row 0 (1 card) should appear at the top center, each subsequent row wider and centered beneath it. Check that the stagger/offset per row is correct and consistent
+
+#### 3. Individual Triangle Cards — Too Small
+- Triangle card tiles are visually too small to be easily clickable and recognizable
+- Fix: increase the rendered size of each individual triangle card. Adjust the card size constant or CSS dimensions in `Board.css` / `TriangleBoard.tsx`. Aim for a noticeably larger tile without the pyramid overflowing the viewport
+
+#### 4. Scoreboard — Does Not Span Full Screen Width
+- The `PlayerInfo` scoreboard is constrained to a narrow width and does not stretch across the full game screen
+- Fix: set `PlayerInfo` container to `width: 100%` with appropriate left/right padding (e.g. `padding: 0 2rem`). Remove any `max-width` cap that is limiting it, or increase it to match the full viewport
+
+### Files Likely to Change
+
+- `src/utils/layoutEngine.ts` — row centering and card offset calculations
+- `src/components/Board/TriangleBoard.tsx` — row wrapper flex alignment
+- `src/assets/styles/board.css` — triangle card size, row layout
+- `src/components/UI/PlayerInfo.tsx` — scoreboard width
+- `src/assets/styles/UI.css` — scoreboard container styles
+
+### Out of Scope for This Phase
+
+- Mobile / responsive layout
+- Setup screen changes
+- Card flip logic or game state
+- Square board layouts
