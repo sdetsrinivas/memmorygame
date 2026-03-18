@@ -46,7 +46,7 @@ const Card: React.FC<CardProps> = ({
   const { state, dispatch } = useGame();
   const cardBackColor = state.settings.cardBackColor;
 
-  // For 24-card triangle layout, the center tile is non-flippable
+  // For 25-card triangle layout, the center tile is non-flippable
   const canFlip =
     !isCenter && !isFlipped && !isMatched && state.flipped.length < 2;
 

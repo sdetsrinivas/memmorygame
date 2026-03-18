@@ -63,7 +63,7 @@ body {
   background: #f7f7fa;
   border-radius: 12px;
   width: 100%;
-  max-width: 800px;
+  max-width: 100%;
 }
 
 .player-info > div {

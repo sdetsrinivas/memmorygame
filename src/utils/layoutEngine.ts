@@ -2,6 +2,7 @@
 
 export function getTrianglePositions(
   cardCount: number,
+  viewportWidth: number = 800, // Default viewport width, will be overridden in CardGrid
 ): { x: number; y: number; orientation: "upright" | "inverted" }[] {
   // Pyramid patterns:
   // 25 cards: 1+3+5+7+9 = 25 (5 rows pyramid)
@@ -30,17 +31,18 @@ export function getTrianglePositions(
   const triangleWidth = 1;
   const triangleHeight = Math.sqrt(3) / 2;
 
-  // Generate positions for each row
+  // Generate positions for each row with proper centering
   let cardIndex = 0;
   for (let row = 0; row < rowSizes.length; row++) {
     const cardsInRow = rowSizes[row];
-    // Center the row horizontally
+    // Calculate the actual width of this row
     const rowWidth = cardsInRow * triangleWidth;
-    const xOffset = -(rowWidth - triangleWidth) / 2;
+    // Calculate x offset to center this row within the viewport
+    const xOffset = (viewportWidth - rowWidth) / 2;
 
     for (let col = 0; col < cardsInRow; col++) {
-      // Calculate x position
-      const x = col + xOffset;
+      // Calculate x position with viewport-aware centering
+      const x = col * triangleWidth + xOffset;
 
       // Calculate y position (rows go down)
       const y = row * triangleHeight;
